@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 200px;
+    padding: 10px;
+    text-align: center; 
+}
+
+.card img {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+select, button, textarea {
+    margin-top: 10px;
+    padding: 5px;
+    width: 90%;
+}
+
+#cart {
+    margin-top: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#cart h2 {
+    text-align: center;
+} 
+
+ table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+} 
+
+button.remove {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.remove:hover {
+    background: #e60000;
+} 
+
+#checkout {
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#checkout:hover {
+    background: #218838;
+}
+
+#review-section textarea {
+    height: 80px;
+}
+
+#review-section button {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#review-section button:hover {
+    background: #0056b3;
+} 
+
+
+ /* kitchen */
+.kitchen-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: #f9f9f9;
+}
+
+
+
+
+/* ===== NAVBAR ===== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff9800;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.nav-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    flex: 1;
+}
+
+.nav-btn {
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    margin-left: 10px;
+}
+
+/* ===== SIDE MENU ===== */
+#sideMenu {
+    position: fixed;
+    top: 50px; /* navbar ke neeche */
+    left: 0;
+    width: 220px;
+    background: #fff;
+    border-right: 2px solid #ddd;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+#sideMenu.hidden {
+    transform: translateX(-250px);
+}
+
+#sideMenu p {
+    margin: 15px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+#sideMenu p:hover {
+    color: #ff9800;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+    margin-top: 60px; /* navbar ke height + thoda space */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px 20px;
+    background: #fff3e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 40px 10px 15px;
+    border: 2px solid #ff9800;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #ff9800;
+    pointer-events: none;
+}
