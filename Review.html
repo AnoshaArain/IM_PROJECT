@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-left">🌟 Reviews</div>
+</div>
+
+<h2>All Reviews</h2>
+
+<!-- Star Filter -->
+<div class="star-filter">
+  <span data-star="5">5 ⭐</span>
+  <span data-star="4">4 ⭐</span>
+  <span data-star="3">3 ⭐</span>
+  <span data-star="2">2 ⭐</span>
+  <span data-star="1">1 ⭐</span>
+  <span data-star="all">All</span>
+</div>
+
+<div id="reviewsContainer" class="reviews-container"></div>
+
+<script>
+// Load reviews from localStorage
+function loadReviews(filterStar="all"){
+  const container = document.getElementById("reviewsContainer");
+  container.innerHTML = "";
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  if(filterStar!=="all"){
+    reviews = reviews.filter(r => r.star == filterStar);
+  }
+
+  reviews.forEach(r=>{
+    const div = document.createElement("div");
+    div.className = "review-card";
+
+    const initials = r.name.split(" ").map(n=>n[0]).join("").toUpperCase();
+
+    div.innerHTML = `
+      <div class="review-header">
+        <div class="avatar">${initials}</div>
+        <div>
+          <b>${r.name}</b>
+          <div class="stars">${"⭐".repeat(r.star)}</div>
+        </div>
+      </div>
+      <p>${r.text}</p>
+      <p class="review-date">${r.date}</p>
+    `;
+
+    container.appendChild(div);
+  });
+}
+
+// Star filter buttons
+document.querySelectorAll(".star-filter span").forEach(span=>{
+  span.addEventListener("click", ()=>{
+    const star = span.getAttribute("data-star");
+    loadReviews(star);
+  });
+});
+
+// Initial load
+loadReviews();
+</script>
+
+</body>
+</html>

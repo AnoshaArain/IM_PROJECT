@@ -1,15 +1,32 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kitchen Orders</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitchen Dashboard</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Kitchen Panel</h1>
+<div class="navbar">
+  <div class="nav-left">🍳 Kitchen</div>
+  <div class="nav-right">
+    <span>−</span>
+    <span>×</span>
+  </div>
+</div>
 
-<div id="kitchen-orders"></div>
+<h2>🟢 Completed Orders</h2>
+<div id="doneOrders" class="kitchen-container"></div>
+
+<h2>🔴 Pending Orders</h2>
+<div id="pendingOrders" class="kitchen-container"></div>
 
 <script src="script.js"></script>
+<script>
+loadKitchen();
+</script>
+
 </body>
 </html>
